@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Errado", "Errado", "{2FEC3508-8200-4710-8659-BA7B12EC5542}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Certo", "Certo", "{E56D85AE-9D6C-498E-A122-A1BDDF2A87D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solid.Certo", "Certo\Solid.Certo.csproj", "{8F00307B-6DBB-47B9-A03E-E0F73B5219F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solid.Errado", "Errado\Solid.Errado.csproj", "{116AAAD3-C7DF-426E-A49A-8F3BA559F657}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Solid.Shared", "Solid.Shared\Solid.Shared.shproj", "{6DDCFE26-0C58-40E1-ABC3-682FC7DF4420}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Solid.Shared\Solid.Shared.projitems*{116aaad3-c7df-426e-a49a-8f3ba559f657}*SharedItemsImports = 4
+		Solid.Shared\Solid.Shared.projitems*{6ddcfe26-0c58-40e1-abc3-682fc7df4420}*SharedItemsImports = 13
+		Solid.Shared\Solid.Shared.projitems*{8f00307b-6dbb-47b9-a03e-e0f73b5219f0}*SharedItemsImports = 4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F00307B-6DBB-47B9-A03E-E0F73B5219F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F00307B-6DBB-47B9-A03E-E0F73B5219F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F00307B-6DBB-47B9-A03E-E0F73B5219F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F00307B-6DBB-47B9-A03E-E0F73B5219F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{116AAAD3-C7DF-426E-A49A-8F3BA559F657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{116AAAD3-C7DF-426E-A49A-8F3BA559F657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{116AAAD3-C7DF-426E-A49A-8F3BA559F657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{116AAAD3-C7DF-426E-A49A-8F3BA559F657}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F00307B-6DBB-47B9-A03E-E0F73B5219F0} = {E56D85AE-9D6C-498E-A122-A1BDDF2A87D5}
+		{116AAAD3-C7DF-426E-A49A-8F3BA559F657} = {2FEC3508-8200-4710-8659-BA7B12EC5542}
+	EndGlobalSection
+EndGlobal
