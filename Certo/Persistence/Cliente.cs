@@ -18,11 +18,20 @@ namespace Solid.Certo.Persistence
         public string Endereco { get; set; }
         public string Nome { get; set; }
 
+        #endregion Public Properties
+
+        #region Public Methods
+
+        public void Excluir()
+        {
+            DBContext<Cliente>.Excluir(Codigo);
+        }
+
         public void Salvar()
         {
             DBContext<Cliente>.Salvar(this);
         }
 
-        #endregion Public Properties
+        #endregion Public Methods
     }
 }
