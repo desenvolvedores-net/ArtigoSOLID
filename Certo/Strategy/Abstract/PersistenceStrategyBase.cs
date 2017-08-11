@@ -4,11 +4,10 @@
 
 using Solid.Certo.Persistence.Contract;
 using Solid.Certo.Strategy.Contract;
-using System.Collections.Generic;
 
 namespace Solid.Certo.Strategy.Abstract
 {
-    public abstract class PersistenceStrategyBase<TEntity>: IPersistenceStrategy<TEntity>
+    public abstract class PersistenceStrategyBase<TEntity>: StrategyBase, IPersistenceStrategy<TEntity>
             where TEntity : class, IEntity, new()
     {
         #region Protected Constructors
@@ -27,12 +26,15 @@ namespace Solid.Certo.Strategy.Abstract
 
         #region Public Methods
 
-        public virtual void DepoisDeSalvar(TEntity entity)
+        public virtual void AntesDeSalvar(TEntity entity)
         {
             //na classe de base eu não faço nada
         }
 
-        public abstract IEnumerable<string> Validar();
+        public virtual void DepoisDeSalvar(TEntity entity)
+        {
+            //na classe de base eu não faço nada
+        }
 
         #endregion Public Methods
     }

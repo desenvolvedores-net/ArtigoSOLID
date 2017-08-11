@@ -2,19 +2,13 @@
  * Classe apenas para fins de exemplo e aprendizado não considera nenhum tipo de validação ou regra ou se utiliza de algum framework.
  */
 
-namespace Solid.Certo.Persistence.Contract
+namespace Solid.Certo.Utility.Abstract
 {
-    public interface IEntity
+    public abstract class AtualizaSaldoBase
     {
-        #region Public Properties
-
-        int Codigo { get; set; }
-
-        #endregion Public Properties
-
         #region Public Methods
 
-        void Salvar();
+        public abstract void Atualizar();
 
         #endregion Public Methods
     }

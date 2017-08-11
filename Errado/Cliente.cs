@@ -43,11 +43,6 @@ namespace Solid.Errado
             Console.WriteLine($"O e-mail foi enviado para o endereço {Email}");
         }
 
-        public void Excluir(long id)
-        {
-            Console.WriteLine($"O cliente {Nome} foi excluído.");
-        }
-
         public void Salvar()
         {
             if(Codigo != 0)

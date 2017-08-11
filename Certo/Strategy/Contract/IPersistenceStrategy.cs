@@ -15,6 +15,8 @@ namespace Solid.Certo.Strategy.Contract
 
         void DepoisDeSalvar(TEntity entity);
 
+        void AntesDeSalvar(TEntity entity);
+
         #endregion Public Properties
     }
 }

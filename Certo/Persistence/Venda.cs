@@ -4,19 +4,17 @@
 
 using Solid.Certo.Persistence.Abstract;
 using Solid.Certo.Repository;
-using System;
+using System.Collections.Generic;
 
 namespace Solid.Certo.Persistence
 {
-    public class Cliente: EntityBase
+    public class Venda: EntityBase
     {
         #region Public Properties
 
-        public string CNPJ { get; set; }
-        public DateTime DataCadastro { get; set; }
-        public string Email { get; set; }
-        public string Endereco { get; set; }
-        public string Nome { get; set; }
+        public int CodigoCliente { get; set; }
+        public List<string> Itens { get; set; }
+        public double TotalVenda { get; set; }
 
         #endregion Public Properties
 
@@ -24,7 +22,7 @@ namespace Solid.Certo.Persistence
 
         public override void Salvar()
         {
-            DBContext<Cliente>.Salvar(this);
+            DBContext<Venda>.Salvar(this);
         }
 
         #endregion Public Methods

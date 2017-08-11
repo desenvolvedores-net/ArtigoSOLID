@@ -19,16 +19,18 @@ namespace Solid.Certo.DependencyService
 
         #region Public Methods
 
-        public static IPersistenceStrategy<TEntity> RecuperarEstrategiaPersistencia<TEntity>()
+        public static IPersistenceStrategy<TEntity> RecuperarEstrategiaPersistencia<TEntity>(TEntity entity)
             where TEntity : IEntity
         {
-            return estrategias[typeof(TEntity).Name] as IPersistenceStrategy<TEntity>;
+            return (IPersistenceStrategy<TEntity>)estrategias[entity.GetType().Name];
         }
 
         public static void RegistrarEstrategias()
         {
-            //aqui eu mantive fixo, mas o correto é manter de forma dinâmica. Estude como o seu framework de injeção de dependência trabalha para que se mantenha esta parte do código dinâmica
+            //aqui eu mantive fixo, mas o correto é manter de forma dinâmica. 
+            //Estude como o seu framework de injeção de dependência trabalha para que se mantenha esta parte do código dinâmica
             estrategias[typeof(Persistence.Cliente).Name] = new ClienteStrategy();
+            estrategias[typeof(Persistence.Venda).Name] = new VendaStrategy();
         }
 
         #endregion Public Methods
