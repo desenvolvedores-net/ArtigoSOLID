@@ -117,6 +117,20 @@ namespace Solid
             Console.WriteLine($"A área correta do retângulo é {retanguloAreaEsperada} e a calculada foi {Errado.Utility.CalculaArea.CalcularArea(retangulo)}");
             Console.WriteLine($"A área correta do quadrado  é {quadradoAreaEsperada} e a calculada foi {Errado.Utility.CalculaArea.CalcularArea(quadrado)}");
         }
+
+        private static void ExwemploTosco()
+        {
+            
+            //aqui, criamos um retângulo com base em um quadrado, atendendo ao princípio do LSP
+            Retangulo retanguloQuadrado = new Quadrado
+            {
+                Altura = 10,
+                Largura = 5
+            };
+
+            //aqui acontece o erro, uma vez que eu passei 10x5=50. O meu calculo de área deveria considerar Altura X Largura igual para o calculo de quadrados.
+            Console.WriteLine($"A área correta do quadrado  é {Errado.Utility.CalculaArea.CalcularArea(retanguloQuadrado)}");
+        }
 #endif
 
         private static void EscreverErro(Exception ex)
