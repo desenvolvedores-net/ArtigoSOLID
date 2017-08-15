@@ -55,7 +55,6 @@
     <Compile Include="Strategy\ClienteStrategy.cs" />
     <Compile Include="Strategy\Contract\IPersistenceStrategy.cs" />
     <Compile Include="Strategy\Contract\IStrategy.cs" />
-    <Compile Include="Strategy\SaldoStrategy.cs" />
     <Compile Include="Strategy\VendaStrategy.cs" />
     <Compile Include="Utility\Abstract\AtualizaSaldoBase.cs" />
     <Compile Include="Utility\AtualizaSaldoMensal.cs" />
@@ -69,7 +68,12 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Errado\Solid.Errado.csproj">
+      <Project>{116AAAD3-C7DF-426E-A49A-8F3BA559F657}</Project>
+      <Name>Solid.Errado</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="..\Solid.Shared\Solid.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

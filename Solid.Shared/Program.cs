@@ -3,9 +3,8 @@
 using Solid.Certo.DependencyService;
 using Solid.Certo.Persistence;
 #else
-
 using Solid.Errado;
-
+using Solid.Errado.QuadradoRetangulo;
 #endif
 
 using System;
@@ -25,7 +24,7 @@ namespace Solid
             Console.Title = "Apresentação S.O.L.I.D - CERTO";
 #else
             Console.Title = "Apresentação S.O.L.I.D - ERRADO";
-            Console.BackgroundColor = ConsoleColor.DarkRed;      
+            Console.BackgroundColor = ConsoleColor.DarkRed;
 #endif
             Action action = null;
 
@@ -37,6 +36,10 @@ namespace Solid
                 Console.WriteLine("0: Sair");
                 Console.WriteLine("1: Cliente");
                 Console.WriteLine("2: Venda");
+
+#if !CERTO
+                Console.WriteLine("3: Área do Quadrado/ Retângulo");
+#endif
                 ConsoleKeyInfo opcao = Console.ReadKey();
 
                 switch(opcao.Key)
@@ -52,6 +55,11 @@ namespace Solid
                     case ConsoleKey.NumPad2:
                         action = RealizarVenda;
                         break;
+#if !CERTO
+                    case ConsoleKey.NumPad3:
+                        action = CalcularQuadradoRetangulo;
+                        break;
+#endif
 
                     default:
                         action = null;
@@ -71,6 +79,45 @@ namespace Solid
                 Console.ReadKey();
             } while(true);//loop infinito apenas para testes
         }
+#if !CERTO
+        private static void CalcularQuadradoRetangulo()
+        {
+            int altura;
+            int largura;
+
+            Console.WriteLine("\r\nInforme a altura:");
+            altura = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Informe a largura:");
+            largura = Convert.ToInt32(Console.ReadLine());
+
+            //aqui, podemos criar um quadrado normalmente.
+            Quadrado quadrado = new Quadrado
+            {
+                Altura = altura,
+                Largura = largura
+            };
+
+            //aqui, criamos um retângulo com base em um quadrado, atendendo ao princípio do LSP
+            Retangulo retanguloQuadrado = new Quadrado
+            {
+                Altura = altura,
+                Largura = largura
+            };
+
+            //Aqui criamos um retângulo normalmente.
+            Retangulo retangulo = new Retangulo
+            {
+                Altura = altura,
+                Largura = largura
+            };
+
+            int quadradoAreaEsperada = altura * altura;
+            int retanguloAreaEsperada = largura * altura;
+            //o método CalcularArea() espera um retângulo, perceba que podemos passar tanto um quadrado quanto um retângulo. Atendendo ao princípio LSP.
+            Console.WriteLine($"A área correta do retângulo é {retanguloAreaEsperada} e a calculada foi {Errado.Utility.CalculaArea.CalcularArea(retangulo)}");
+            Console.WriteLine($"A área correta do quadrado  é {quadradoAreaEsperada} e a calculada foi {Errado.Utility.CalculaArea.CalcularArea(quadrado)}");
+        }
+#endif
 
         private static void EscreverErro(Exception ex)
         {

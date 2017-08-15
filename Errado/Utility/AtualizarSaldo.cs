@@ -12,11 +12,11 @@
         {
             foreach(var saldo in saldos)
             {
-                if(saldo.GetType() == typeof(AtualizarSaldoAnual))
+                if(saldo is AtualizarSaldoAnual)
                     ((AtualizarSaldoAnual)saldo).Atualizar();
-                else if(saldo.GetType() == typeof(AtualizarSaldoMensal))
+                else if(saldo is AtualizarSaldoMensal)
                     ((AtualizarSaldoMensal)saldo).Atualizar();
-                else if(saldo.GetType() == typeof(AtualizarSaldoDiario))
+                else if(saldo is AtualizarSaldoDiario)
                     ((AtualizarSaldoDiario)saldo).Atualizar();
             }
         }
