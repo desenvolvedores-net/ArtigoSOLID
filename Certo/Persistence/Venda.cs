@@ -22,7 +22,7 @@ namespace Solid.Certo.Persistence
 
         public override void Salvar()
         {
-            DBContext<Venda>.Salvar(this);
+            DummyDBContext<Venda>.Salvar(this);
         }
 
         #endregion Public Methods

@@ -45,6 +45,7 @@
     <Compile Include="AtualizarSaldoDiario.cs" />
     <Compile Include="AtualizarSaldoMensal.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Contract\ISaldo.cs" />
     <Compile Include="LSP\Abstract\AtualizaSaldoBase.cs" />
     <Compile Include="LSP\AtualizarSaldoAnual.cs" />
     <Compile Include="LSP\AtualizarSaldoDiario.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuadradoRetangulo\Quadrado.cs" />
     <Compile Include="QuadradoRetangulo\Retangulo.cs" />
+    <Compile Include="SaldoFinanceiro.cs" />
     <Compile Include="Utility\AtualizarSaldo.cs" />
     <Compile Include="Utility\CalculaArea.cs" />
     <Compile Include="Venda.cs" />

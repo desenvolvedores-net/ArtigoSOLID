@@ -42,12 +42,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DependencyService\StrategyDependencyManager.cs" />
+    <Compile Include="ISP\Abstract\SaldoBase.cs" />
+    <Compile Include="ISP\Abstract\SaldoFinanceiroBase.cs" />
+    <Compile Include="ISP\Abstract\SaldoEstoqueBase.cs" />
+    <Compile Include="ISP\Contract\ISaldoEstoque.cs" />
+    <Compile Include="ISP\Contract\ISaldoFinanceiro.cs" />
+    <Compile Include="ISP\Contract\ISaldo.cs" />
+    <Compile Include="ISP\SaldoEstoque.cs" />
+    <Compile Include="ISP\SaldoFinanceiro.cs" />
     <Compile Include="Persistence\Abstract\EntityBase.cs" />
     <Compile Include="Persistence\Cliente.cs" />
     <Compile Include="Persistence\Contract\IEntity.cs" />
     <Compile Include="Persistence\Venda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\DBContext.cs" />
+    <Compile Include="Repository\DummyDBContext.cs" />
     <Compile Include="Service\AtualizaSaldoService.cs" />
     <Compile Include="Service\EmailService.cs" />
     <Compile Include="Strategy\Abstract\PersistenceStrategyBase.cs" />
