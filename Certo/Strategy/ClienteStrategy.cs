@@ -12,6 +12,13 @@ using System.Linq;
 
 namespace Solid.Certo.Strategy
 {
+
+    /*
+     * As classes de estratégia não conhecem a implementação do banco de dados, apenas verificam se está tudo correto para que seja salvo em banco de dados.
+     * 
+     */
+
+    //Sim, ao invés de "Cliente", podemos definir até aqui como sendo uma interface de cliente "ICliente".
     public class ClienteStrategy: PersistenceStrategyBase<Cliente>
     {
         #region Public Constructors
@@ -27,6 +34,7 @@ namespace Solid.Certo.Strategy
         public override void DepoisDeSalvar(Cliente entity)
         {
             base.DepoisDeSalvar(entity);
+            //Podemos também injetar o serviço de envio de emails. Desta forma esta classe não precisaria nem conhecer o EmailService.
             EmailService.EnviarEmail(entity.Email);
         }
 
@@ -38,6 +46,8 @@ namespace Solid.Certo.Strategy
             if(!Entidade.Email.Contains("@"))
                 yield return "O e-mail não é válido";
 
+            //Aqui, para diminuir ainda mais o acoplamento. Usando injeção de dependência podemos definir o nosso validador de CNPJ, uma vez que o mesmo implementa a interface IValidator<>
+            //O que poderia ser customizado para cada cliente, por exemplo.
             string cnpjEhValido = new CNPJValidator().Validar(Entidade.CNPJ).FirstOrDefault();
 
             if(!String.IsNullOrEmpty(cnpjEhValido))

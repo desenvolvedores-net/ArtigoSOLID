@@ -9,7 +9,7 @@ namespace Solid.Certo.Validator.Contract
     public interface IValidator<TValue>
     {
         #region Public Methods
-
+        //Retorna todos os erros ao validar o objeto
         IEnumerable<string> Validar(TValue value);
 
         #endregion Public Methods

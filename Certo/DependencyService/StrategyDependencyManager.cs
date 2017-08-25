@@ -27,8 +27,9 @@ namespace Solid.Certo.DependencyService
 
         public static void RegistrarEstrategias()
         {
-            //aqui eu mantive fixo, mas o correto é manter de forma dinâmica. 
-            //Estude como o seu framework de injeção de dependência trabalha para que se mantenha esta parte do código dinâmica
+            //aqui eu mantive fixo, mas o correto é manter de forma dinâmica. (desacoplado)
+            //Estude como o seu framework de injeção de dependência trabalha para que se mantenha esta parte do código dinâmica (desacoplada)
+            //Não foi intuito deste exemplo de código mostrar nenhum contêiner ou framework de injeção de dependência.
             estrategias[typeof(Persistence.Cliente).Name] = new ClienteStrategy();
             estrategias[typeof(Persistence.Venda).Name] = new VendaStrategy();
         }

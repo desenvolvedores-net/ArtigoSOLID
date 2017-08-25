@@ -4,8 +4,6 @@
     {
         #region Public Methods
 
-        #region Public Methods
-
         void Atualizar();
 
         #endregion Public Methods

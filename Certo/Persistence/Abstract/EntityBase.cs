@@ -3,19 +3,18 @@
  */
 
 using Solid.Certo.Persistence.Contract;
-using Solid.Certo.Repository;
 
 namespace Solid.Certo.Persistence.Abstract
 {
     public abstract class EntityBase: IEntity
     {
+
+        #region Public Properties
+
         /*
          * Eu tenho por hábito colocar uma chave primária em todas as minhas tabelas.
          * Por isso este campo é base para todas as minhas outras entidades.
          */
-
-        #region Public Properties
-
         public int Codigo { get; set; }
 
         #endregion Public Properties

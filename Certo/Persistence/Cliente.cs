@@ -24,6 +24,8 @@ namespace Solid.Certo.Persistence
 
         public override void Salvar()
         {
+            //Não estou usando o Repository Pattern
+            //E vou me permitir fazer isso na classe de cliente e não em um repositório
             DummyDBContext<Cliente>.Salvar(this);
         }
 

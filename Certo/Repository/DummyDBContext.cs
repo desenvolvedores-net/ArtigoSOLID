@@ -13,6 +13,10 @@ using System.Collections.Generic;
 
 namespace Solid.Certo.Repository
 {
+    /*
+     * Nesta classe a inversão acontece claramente, uma vez que a minha classe de acesso os dados não sabe quem vai validar e nem como vai validar os dados que serão enviados ao banco de dados. Ela simplesmente usa a interface de estratégia para achar a estratégia correto e realizar as validações necessárias.
+     * 
+     */
     public static class DummyDBContext<TEntity>
         where TEntity : class, IEntity
     {

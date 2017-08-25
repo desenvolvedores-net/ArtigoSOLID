@@ -12,6 +12,7 @@ namespace Solid.Certo.Service
 
         public static void EnviarEmail(string email)
         {
+            //Aqui podemos implementar nossos serviços de envio de e-mail e utilizar em toda a aplicação
             Console.WriteLine($"O e-mail foi enviado para {email}.");
         }
 
